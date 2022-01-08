@@ -1,41 +1,62 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.containerList{
+
+/*Nav Bar*/
+.containerList {
   list-style: none;
   display: flex;
   flex-direction: row;
 }
 
-.containerNavBar{
+.containerNavBar {
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
 }
 
-.listItem{
+.listItem {
   margin-left: 2rem;
 }
 
-.listItem:hover{
+.listItem:hover {
   color: rgb(6, 143, 6);
   cursor: pointer;
 }
 
-.treeIcon{
+.treeIcon {
   width: 2rem;
   height: 2.6rem;
   display: inline;
   margin-top: 0.3rem;
 }
 
-
-.title{
-  font-size: 1.3rem;
+.title {
+  font-family: 'Pacifico', cursive;
+  color: red;
+  font-size: 2rem;
   display: inline;
-  margin-left: 1rem;
+  margin-left: 0.2rem;
   position: relative;
-  bottom: 0.7rem;
+  bottom: 0.6rem;
+}
+
+.cartItems {
+  position: relative;
+  bottom: 1rem;
+  left: 0.3rem;
+}
+
+/*Item list container*/
+.messageStyle {
+  color: rgb(107, 107, 107);
+  font-size: 2rem;
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
 }
