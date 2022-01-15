@@ -1,5 +1,5 @@
 import React from "react";
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "../CartWidget/CartWidget";
 import { FaHollyBerry } from "react-icons/fa";
 
 export function NavBar() {

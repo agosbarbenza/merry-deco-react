@@ -60,3 +60,74 @@ body {
   width: 100%;
   text-align: center;
 }
+
+/*Item count*/
+.itemCountContainer {
+  margin: auto;
+  width: 25rem;
+  background-color: rgb(226, 255, 230);
+  height: 20.3rem;
+}
+
+.lessMore {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  height: 2rem;
+  background-color: white;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  perspective: 1px;
+  margin-top: 0.5rem;
+}
+
+.lessMoreBtn {
+  border: none;
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: green;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.qty {
+  font-size: 1.4rem;
+  position: relative;
+  bottom: 1.34rem;
+}
+
+.addBtn {
+  width: 90%;
+  height: 2.2rem;
+  margin-left: 5%;
+  margin-top: 4%;
+  border-radius: 8px;
+  border-color: rgb(0, 179, 89);
+  color: rgb(0, 179, 89);
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
+
+/*Alert Count*/
+
+.alertCountContainer {
+  width: 10rem;
+  background-color: skyblue;
+  height: 8rem;
+}
+
+.alertCountMsg {
+  color: black;
+  font-size: 1.4rem;
+}
+
+.productImg {
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
