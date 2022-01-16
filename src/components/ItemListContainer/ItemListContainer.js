@@ -1,10 +1,10 @@
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
 
-export function ItemListContainer() {
+export function ItemListContainer({ listOfItems }) {
   return (
     <>
-      <ItemCount stock={10} initial={1} />
+      <ItemList items={listOfItems} />
     </>
   );
 }
