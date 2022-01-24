@@ -22,13 +22,15 @@ export default function ItemList() {
   });
   return (
     <>
-      {!loading ? (
-        arrayProducts.map((item) => {
-          return <Item key={item.id} item={item}></Item>;
-        })
-      ) : (
-        <p className="loading">Loading...</p>
-      )}
+      <div className="itemListCont">
+        {!loading ? (
+          arrayProducts.map((item) => {
+            return <Item key={item.id} item={item}></Item>;
+          })
+        ) : (
+          <p className="loading">Loading...</p>
+        )}
+      </div>
     </>
   );
 }

@@ -132,9 +132,16 @@ body {
   margin-right: auto;
 }
 
+
+.itemListCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 /*Item */
 .itemContainer {
-  margin: 2rem auto;
+  margin: 2rem 2rem 2rem 2rem;
   position: relative;
   width: 20rem;
   height: 23rem;
@@ -163,6 +170,7 @@ body {
 }
 
 .categoryTitle {
+  text-transform: uppercase;
   font-size: 1rem;
   font-weight: bold;
   margin: auto;
@@ -189,4 +197,62 @@ body {
 .description {
   font-size: 0.78rem;
   text-align: center;
+}
+
+/*Item Detail Container*/
+.itemDetailContainer {
+  margin: 1rem auto 2rem;
+  position: relative;
+  width: 50rem;
+  height: 27rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 92, 23);
+  border-radius: 10px;
+  display: flex;
+}
+
+.productDetailImg {
+  margin-left: 1rem;
+  width: 23rem;
+  height: 23rem;
+}
+
+.details {
+  display: inline;
+  margin-top: 4rem;
+}
+
+.itemDetailTitle, .itemDetailPrice {
+  font-weight: bold;
+}
+
+.itemDetailTitle {
+  font-size: 1.25rem;
+}
+
+.itemDetailCategory {
+  text-transform: uppercase;
+  margin-left: 2rem;
+}
+
+.itemDetailPrice {
+  font-size: 1.25rem;
+}
+
+.addToCartBtn {
+  display: block;
+  width: 90%;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.inputQty {
+  width: 3rem;
+  height: 2rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+
+.addLessBtn {
+  width: 1rem;
 }

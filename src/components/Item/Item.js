@@ -1,10 +1,9 @@
 import React from "react";
-import { ListOfItems } from "./listOfItems";
 
 export default function Item({ item }) {
   return (
     <div className="itemContainer">
-      <p className="categoryTitle">Trees</p>
+      <p className="categoryTitle">{item.category}</p>
       <div className="lineSeparator"></div>
       <img className="productItemImg" src={item.picture}></img>
       <p className="itemTitle">{item.title}</p>
