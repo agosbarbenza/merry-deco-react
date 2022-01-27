@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Item({ item }) {
   return (
@@ -8,7 +9,11 @@ export default function Item({ item }) {
       <img className="productItemImg" src={item.picture}></img>
       <p className="itemTitle">{item.title}</p>
       <p className="description">{item.description}</p>
-      <button className="detailsBtn">See Details</button>
+      <button className="detailsBtn">
+        <Link className="linkStyle" to={`/item/${item.id}`}>
+          See Details
+        </Link>
+      </button>
     </div>
   );
 }

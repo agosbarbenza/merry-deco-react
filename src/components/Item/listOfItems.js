@@ -102,4 +102,145 @@ export const listOfItems = [
     stock: 10,
     category: "Ornaments",
   },
+  {
+    id: 10,
+    title: "Melrose",
+    description:
+      "13.5 White and Silver Colored Snowflake Embroidered Christmas Table Runner",
+    price: 15.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/300268/497565/api88rne2__03762.1592544611.jpg?c=3",
+
+    stock: 20,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 11,
+    title: "Melrose Cream",
+    description:
+      "13 Cream White and Silver Colored Christmas Tree Embroidered Table Runner",
+    price: 15.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/268539/527073/apicvqhvs__06864.1592544583.jpg?c=3",
+
+    stock: 30,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 12,
+    title: "Ivory",
+    description: "Ivory Winter Sparkle Jacquard Designed Square Table Topper",
+    price: 19.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/611673/1155279/api0yijvj__77598.1592472696.jpg?c=3",
+
+    stock: 3,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 13,
+    title: "The Ribbon People",
+    description:
+      "Pack of 60 X-Mas Stockings on Staircase 3-Ply Lunch Napkins 6.5",
+    price: 9.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/541309/986671/apiom1ltc__30215.1592477388.jpg?c=3",
+
+    stock: 5,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 14,
+    title: "Autumn Leaves",
+    description:
+      "Red and Brown Embroidered Wheat with Autumn Leaves Kitchen Gift Set",
+    price: 10.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/443471/781097/apirma9kj__82997.1598437201.jpg?c=3",
+
+    stock: 4,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 15,
+    title: "Nordic Winter",
+    description:
+      "Pack of 60 Nordic Winter Design Lunch Napkins 6.5 Trees and Snowflakes",
+    price: 9.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/541291/986647/apiflxzlj__46680.1592477083.jpg?c=3",
+
+    stock: 5,
+    category: "Kitchenwear and tablewear",
+  },
+  {
+    id: 16,
+    title: "Hub",
+    description:
+      "Warm White LED Wide Angle Mini Christmas Lights - 11.5 ft White Wire",
+    price: 19.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/504646/920157/apix7idlu__83911.1599158682.jpg?c=3",
+
+    stock: 5,
+    category: "Lights",
+  },
+  {
+    id: 17,
+    title: "Hub Green",
+    description:
+      "Count Clear Commercial LED Wide Angle Christmas Lights - 24.5 ft Green Wire",
+    price: 14.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/504647/920159/apiqw86dw__48415.1599292894.jpg?c=3",
+
+    stock: 5,
+    category: "Lights",
+  },
+  {
+    id: 18,
+    title: "Roma",
+    description:
+      "200 Vibrantly Colored LED USB Wide Angle Christmas Lights - 24.5 ft Green Wire",
+    price: 14.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/449710/778174/apihs1qj1__64137.1604534995.jpg?c=3",
+
+    stock: 5,
+    category: "Lights",
+  },
+  {
+    id: 19,
+    title: "Snowman Welcome",
+    description: "Red, White and Gray Snowman WELCOME Christmas Lantern 9.75",
+    price: 11.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/584042/1074025/apiid0mh7__40089.1604626912.jpg?c=3",
+
+    stock: 30,
+    category: "Home Decor",
+  },
+  {
+    id: 20,
+    title: "Rudolph",
+    description:
+      "LED Flameless Pillar Candle in a Clear Glass Bottle Lantern with Deer Accents",
+    price: 7.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/1280x1280/products/338581/510486/apixqzbz4__84612.1605038566.jpg?c=3",
+
+    stock: 5,
+    category: "Home Decor",
+  },
+  {
+    id: 20,
+    title: "Red Rudolph",
+    description: "Red and Black LED Candle With Deer Christmas Lantern",
+    price: 7.2,
+    picture:
+      "https://cdn11.bigcommerce.com/s-km30nn7y/images/stencil/640w/products/980826/1908658/apituqq2e__25114.1604600251.jpg?c=3",
+
+    stock: 5,
+    category: "Home Decor",
+  },
 ];

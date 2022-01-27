@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Button from "@mui/material/Button";
+import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetail({ item }) {
   return (
     <>
+      <p className="itemDetailCategory">
+        Home {">"} Categories {">"} {item.category}
+      </p>
       <div className="itemDetailContainer">
         <div>
-          <p className="itemDetailCategory">
-            Merry Deco - Category - {item.category}
-          </p>
           <img className="productDetailImg" src={item.picture}></img>
         </div>
         <div className="details">
@@ -16,14 +16,7 @@ export default function ItemDetail({ item }) {
           <p className="detaildescription">{item.description}</p>
           <p className="itemDetailStock">Stock: {item.stock} units</p>
           <p className="itemDetailPrice">Price: ${item.price}</p>
-          <Button variant="outlined" className="addLessBtn">
-            +
-          </Button>
-          <input className="inputQty" type="text"></input>
-          <Button variant="outlined" className="addLessBtn">
-            -
-          </Button>
-          <button className="addToCartBtn">Add to cart</button>
+          <ItemCount stock={item.stock} initial={1} />
         </div>
       </div>
     </>

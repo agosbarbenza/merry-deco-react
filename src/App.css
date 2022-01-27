@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*Nav Bar*/
@@ -18,6 +19,7 @@ body {
 }
 
 .listItem {
+  font-weight: 400;
   margin-left: 2rem;
 }
 
@@ -64,19 +66,22 @@ body {
 /*Item count*/
 .itemCountContainer {
   margin: auto;
-  width: 25rem;
-  background-color: rgb(226, 255, 230);
-  height: 20.3rem;
+  /* width: 10rem; */
+  background-color: rgb(255, 255, 255);
+  height: 5rem;
 }
 
 .lessMore {
   display: flex;
   justify-content: space-between;
-  width: 97%;
+  width: 40%;
   height: 2rem;
-  background-color: white;
-  margin: auto;
-  border-radius: 15px;
+  /* background-color: rgb(211, 211, 211);
+  border-radius: 15px; */
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: rgb(0, 179, 89);
   overflow: hidden;
   perspective: 1px;
   margin-top: 0.5rem;
@@ -84,7 +89,7 @@ body {
 
 .lessMoreBtn {
   border: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   margin-left: 1rem;
   margin-right: 1rem;
   color: green;
@@ -96,18 +101,19 @@ body {
   font-size: 1.4rem;
   position: relative;
   bottom: 1.34rem;
+  color: green;
 }
 
 .addBtn {
-  width: 90%;
+  width: 40%;
   height: 2.2rem;
-  margin-left: 5%;
-  margin-top: 4%;
+  display: block;
+  margin-top: 0.5rem;
   border-radius: 8px;
   border-color: rgb(0, 179, 89);
-  color: rgb(0, 179, 89);
+  color: rgb(250, 250, 250);
   font-weight: bold;
-  background-color: white;
+  background-color: rgb(0, 186, 77);
   cursor: pointer;
 }
 
@@ -146,21 +152,33 @@ body {
   width: 20rem;
   height: 23rem;
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 92, 23);
-  border-radius: 10px;
+  /* border: 1px solid rgb(0, 92, 23);
+  border-radius: 10px; */
 }
 
 .detailsBtn {
   display: block;
-  width: 90%;
+  width: 70%;
   height: 2rem;
   margin: auto;
+  border-radius: 8px;
+  color: rgb(250, 250, 250);
+  font-weight: bold;
+  background-color: rgb(0, 186, 77);
+}
+
+.linkStyle {
+  color: rgb(250, 250, 250);
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .productItemImg {
   display: block;
   margin: auto;
   width: 13rem;
+  height: 13rem;
 }
 
 .itemTitle {
@@ -177,10 +195,13 @@ body {
   text-align: center;
 }
 
-.lineSeparator {
-  width: 100%;
-  background-color: rgb(0, 92, 23);
-  height: 1px;
+.titleStyle {
+  text-decoration: none;
+}
+
+.titleStyleNav {
+  text-decoration: none;
+  color: rgb(4, 4, 4);
 }
 
 .detailsBtn {
@@ -201,14 +222,11 @@ body {
 
 /*Item Detail Container*/
 .itemDetailContainer {
-  margin: 1rem auto 2rem;
-  position: relative;
-  width: 50rem;
-  height: 27rem;
+
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 92, 23);
-  border-radius: 10px;
   display: flex;
+  justify-content: center;
+  column-gap: 8rem;
 }
 
 .productDetailImg {
@@ -219,7 +237,7 @@ body {
 
 .details {
   display: inline;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .itemDetailTitle, .itemDetailPrice {
@@ -233,6 +251,7 @@ body {
 .itemDetailCategory {
   text-transform: uppercase;
   margin-left: 2rem;
+  font-weight: 300;
 }
 
 .itemDetailPrice {
@@ -255,4 +274,22 @@ body {
 
 .addLessBtn {
   width: 1rem;
+}
+
+/*Footer*/
+
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 30rem;
+  background-color: rgb(179, 179, 179);
+}
+
+.socialMedia {
+  margin-top: 1rem;
+}
+
+.sm {
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
 }

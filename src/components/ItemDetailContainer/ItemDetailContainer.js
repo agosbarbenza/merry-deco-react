@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { listOfItems } from "../Item/listOfItems";
+import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState("");
   const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  let idProduct = "";
 
   const getItem = () => {
     const itemProduct = new Promise((resolve, reject) => {
@@ -14,7 +17,8 @@ export default function ItemDetailContainer() {
     });
     itemProduct
       .then((res) => {
-        setProduct(res[0]);
+        idProduct = res.filter((item) => item.id == id);
+        setProduct(idProduct[0]);
         setLoading(false);
       })
       .catch((err) => {
@@ -23,7 +27,7 @@ export default function ItemDetailContainer() {
   };
   useEffect(() => {
     getItem();
-  }, []);
+  }, [id]);
   return (
     <>
       {!loading ? (

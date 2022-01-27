@@ -27,11 +27,6 @@ export default function ItemCount({ stock, initial }) {
 
   return (
     <div id="itemCountContainer" className="itemCountContainer">
-      <p>Northlight Tree 5'</p>
-      <img
-        className="productImg"
-        src="https://mobileimages.lowes.com/productimages/bdeabf91-9259-4206-8801-1fd86d9149c9/09345579.jpg?size=pdhi"
-      />
       <div className="lessMore" id="lessMore">
         <button
           onClick={() => subtractItemFromCart()}
