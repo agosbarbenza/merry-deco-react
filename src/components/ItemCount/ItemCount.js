@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ItemCount({ stock, initial }) {
+export default function ItemCount({ stock, initial, onAdd }) {
   const [productCount, setProductCount] = useState(initial);
   let items = "";
-  productCount == 1 ? (items = "item") : (items = "items");
+  productCount === 1 ? (items = "item") : (items = "items");
 
   function addItemToCart() {
     if (stock > 0 && productCount < stock) {
@@ -17,12 +16,6 @@ export default function ItemCount({ stock, initial }) {
     if (productCount > initial) {
       setProductCount(parseInt(productCount) - 1);
     }
-  }
-
-  function handleCartClick(productCount, items) {
-    toast.success(
-      "You have added " + productCount + " " + items + " to your cart!"
-    );
   }
 
   return (
@@ -47,11 +40,10 @@ export default function ItemCount({ stock, initial }) {
       <button
         className="addBtn"
         id="addBtn"
-        onClick={() => handleCartClick(productCount, items)}
+        onClick={() => onAdd(productCount, items)}
       >
         Add to cart
       </button>
-      <ToastContainer />
     </div>
   );
 }

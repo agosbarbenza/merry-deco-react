@@ -233,7 +233,7 @@ export const listOfItems = [
     category: "Home Decor",
   },
   {
-    id: 20,
+    id: 21,
     title: "Red Rudolph",
     description: "Red and Black LED Candle With Deer Christmas Lantern",
     price: 7.2,

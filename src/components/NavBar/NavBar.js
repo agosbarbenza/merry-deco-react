@@ -25,10 +25,11 @@ export function NavBar() {
         <Link className="titleStyleNav" to={`/`}>
           <li className="listItem titleStyleNav">Home</li>
         </Link>
-        {categories.map((item) => (
+        {categories.map((item, key) => (
           <Link
             className="listItem titleStyleNav"
             to={`/categories/${item.id}`}
+            key={item.id}
           >
             {item.name}
           </Link>
