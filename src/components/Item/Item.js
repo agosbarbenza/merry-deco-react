@@ -6,7 +6,11 @@ export default function Item({ item }) {
     <div className="itemContainer">
       <p className="categoryTitle">{item.category}</p>
       <div className="lineSeparator"></div>
-      <img className="productItemImg" src={item.picture}></img>
+      <img
+        className="productItemImg"
+        alt={item.description}
+        src={item.picture}
+      ></img>
       <p className="itemTitle">{item.title}</p>
       <p className="description">{item.description}</p>
       <button className="detailsBtn">

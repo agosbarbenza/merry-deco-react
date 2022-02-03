@@ -6,28 +6,31 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import { Cart } from "./components/Cart/Cart";
+import CartProvider from "./components/Context/CartProvider";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer />
-          </Route>
-          <Route path="/categories/:categoryId">
-            <itemListContainer />
-          </Route>
-          <Route path="/item/:id">
-            <ItemDetailContainer />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-        </Switch>
-        {/* <Footer /> */}
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer />
+            </Route>
+            <Route path="/categories/:categoryId">
+              <itemListContainer />
+            </Route>
+            <Route path="/item/:id">
+              <ItemDetailContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+          {/* <Footer /> */}
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

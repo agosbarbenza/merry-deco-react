@@ -1,17 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import FinishPurchase from "../FinishPurchase/FinishPurchase";
+import { cartContext } from "../Context/CartProvider";
 
 export default function ItemDetail({ item }) {
   const [finishPurchase, setFinishPurchase] = useState(true);
+  const { addToCart } = useContext(cartContext);
+  const [addedProduct, setAddedProduct] = useState(false);
 
-  function onAdd(productCount, items) {
+  //Item antes me muestra el producto ok
+  // console.log("item antes?", item);
+  function onAdd(productCount, items, item) {
     toast.success(
       "You have added " + productCount + " " + items + " to your cart!"
     );
+    //Item al entrar en onAdd figura como undefined.
+    // console.log("item?", item);
     setFinishPurchase(false);
+    addToCart(item, productCount);
+    setAddedProduct(true);
   }
   return (
     <>
