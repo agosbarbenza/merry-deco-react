@@ -12,7 +12,7 @@ export default function ItemDetail({ item }) {
 
   //Item antes me muestra el producto ok
   // console.log("item antes?", item);
-  function onAdd(productCount, items, item) {
+  function onAdd(productCount, items) {
     toast.success(
       "You have added " + productCount + " " + items + " to your cart!"
     );
