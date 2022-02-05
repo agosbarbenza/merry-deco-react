@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { FaHollyBerry } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { cartContext } from "../Context/CartProvider";
 
 export function NavBar() {
   const { categoryId } = useParams();
+  const { cart } = useContext(cartContext);
   const categories = [
     { id: 1, name: "Trees" },
     { id: 2, name: "Lights" },
@@ -13,6 +15,7 @@ export function NavBar() {
     { id: 4, name: "Kitchenwear and Tablewear" },
     { id: 5, name: "Home Decor" },
   ];
+  const cartCount = cart.map((item) => item.count).reduce((x, y) => x + y, 0);
   return (
     <div className="containerNavBar">
       <Link className="titleStyleNav" to={`/`}>
@@ -35,7 +38,7 @@ export function NavBar() {
           </Link>
         ))}
         <CartWidget size="6rem" color="pink" />
-        <p className="cartItems">0</p>
+        <p className="cartItems">{cartCount}</p>
       </ul>
     </div>
   );

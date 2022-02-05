@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
@@ -10,14 +10,10 @@ export default function ItemDetail({ item }) {
   const { addToCart } = useContext(cartContext);
   const [addedProduct, setAddedProduct] = useState(false);
 
-  //Item antes me muestra el producto ok
-  // console.log("item antes?", item);
   function onAdd(productCount, items) {
     toast.success(
       "You have added " + productCount + " " + items + " to your cart!"
     );
-    //Item al entrar en onAdd figura como undefined.
-    // console.log("item?", item);
     setFinishPurchase(false);
     addToCart(item, productCount);
     setAddedProduct(true);
@@ -29,7 +25,11 @@ export default function ItemDetail({ item }) {
       </p>
       <div className="itemDetailContainer">
         <div>
-          <img className="productDetailImg" src={item.picture}></img>
+          <img
+            className="productDetailImg"
+            alt={item.description}
+            src={item.picture}
+          ></img>
         </div>
         <div className="details">
           <p className="itemDetailTitle">{item.title}</p>

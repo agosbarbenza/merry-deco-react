@@ -17,7 +17,7 @@ export default function ItemDetailContainer() {
     });
     itemProduct
       .then((res) => {
-        idProduct = res.filter((item) => item.id == id);
+        idProduct = res.filter((item) => item.id === parseInt(id));
         setProduct(idProduct[0]);
         setLoading(false);
       })
@@ -27,7 +27,7 @@ export default function ItemDetailContainer() {
   };
   useEffect(() => {
     getItem();
-  }, [id]);
+  });
   return (
     <>
       {!loading ? (

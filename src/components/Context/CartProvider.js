@@ -5,7 +5,7 @@ export const cartContext = createContext();
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   function addToCart(product, count) {
-    if (!isInCart(product)) {
+    if (!isInCart(product.id)) {
       setCart([...cart, { item: product, count: count }]);
     } else {
       const itemIndex = cart.findIndex((e) => e.item.id === product.id);
@@ -15,6 +15,13 @@ export default function CartProvider({ children }) {
   }
   function isInCart(idProduct) {
     return cart.some((e) => e.item.id === idProduct);
+  }
+  function removeItem(itemId) {
+    const modifiedCart = cart.filter((e) => e.item.id !== itemId);
+    setCart(modifiedCart);
+  }
+  function clearCart() {
+    setCart([]);
   }
   return (
     <cartContext.Provider value={{ cart, addToCart }}>
