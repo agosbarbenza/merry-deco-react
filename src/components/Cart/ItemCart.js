@@ -1,15 +1,11 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { cartContext } from "../Context/CartProvider";
+import React from "react";
 
-export function ItemCart(cartItem) {
-  console.log("cartItem", cartItem);
-  console.log("cartItem.item.id", cartItem.item.id);
+export function ItemCart({ cartItem }) {
   return (
     <div>
-      {/* <p>{cartItem.item.title}</p>
+      <p>{cartItem.item.title}</p>
       <p>{cartItem.item.description}</p>
-      <p>{cartItem.count}</p> */}
+      <p>{cartItem.count}</p>
     </div>
   );
 }

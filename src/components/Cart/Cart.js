@@ -9,7 +9,7 @@ export function Cart() {
   return (
     <div>
       {cart.map((e) => (
-        <ItemCart cartItem={e} />
+        <ItemCart key={e.item.id} cartItem={e} />
       ))}
       <Link to={`/`} className="titleStyle">
         <button className="cartBtn">Return to Home</button>
