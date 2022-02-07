@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
 import { listOfItems } from "../Item/listOfItems";
+// import { useParams } from "react-router-dom";
 
 export default function ItemList() {
+  // const { categoryId } = useParams();
   const [arrayProducts, setArrayProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const listOfProducts = new Promise((resolve, reject) => {

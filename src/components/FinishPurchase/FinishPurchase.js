@@ -9,7 +9,7 @@ export default function FinishPurchase() {
         <button className="addBtn">Finish your purchase</button>
       </Link>
       <Link to={`/`} className="titleStyle">
-        <button className="addBtn">Add more items</button>
+        <button className="addBtn">Continue shopping</button>
       </Link>
     </div>
   );

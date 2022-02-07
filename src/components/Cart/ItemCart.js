@@ -6,7 +6,7 @@ export function ItemCart({ cartItem }) {
   const totalPrice = cartItem.count * cartItem.item.price;
   const { removeItem } = useContext(cartContext);
   return (
-    <div className="itemCartContainer">
+    <>
       <div className="itemCartSubContainer">
         <img
           className="itemCartImg"
@@ -14,30 +14,17 @@ export function ItemCart({ cartItem }) {
           alt={cartItem.item.description}
         />
         <div className="itemCartDetails">
-          <p>
-            {cartItem.item.title} -{" "}
-            <span style={{ color: "rgb(89, 89, 89)" }}>
-              {cartItem.count}
-              {cartItem.count > 1 ? " items" : " item"}
-            </span>
-          </p>
-          <p style={{ "font-size": "0.85rem" }} className="cartItemDesc">
-            {cartItem.item.description}
-          </p>
-          <p style={{ "font-weight": 500, "font-size": "1.3rem" }}>
-            ${totalPrice.toFixed(2)}{" "}
-            <span style={{ "font-size": "0.75rem", color: "rgb(89, 89, 89)" }}>
-              (${cartItem.item.price.toFixed(2)} each)
-            </span>
-          </p>
+          <p>{cartItem.item.title}</p>
+          <p className="cartItemDesc">{cartItem.item.description}</p>
         </div>
+        <span className="itemCartCount">{cartItem.count}</span>
+        <p className="itemCartTotal">${totalPrice.toFixed(2)}</p>
         <FaWindowClose
           onClick={() => removeItem(cartItem.item.id)}
           className="removeIcon"
         />
       </div>
-
       <div className="cartSeparator"></div>
-    </div>
+    </>
   );
 }
