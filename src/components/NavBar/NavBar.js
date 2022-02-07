@@ -37,8 +37,10 @@ export function NavBar() {
             {item.name}
           </Link>
         ))}
-        <CartWidget size="6rem" color="pink" />
-        <p className="cartItems">{cartCount}</p>
+        <Link className="titleStyleNav" to={`/cart`}>
+          <CartWidget size="6rem" color="pink" />
+          <p className="cartItems">{cartCount}</p>
+        </Link>
       </ul>
     </div>
   );
