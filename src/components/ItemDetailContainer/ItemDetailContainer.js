@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { listOfItems } from "../Item/listOfItems";
 import { useParams } from "react-router-dom";
+import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState("");
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  let idProduct = "";
 
   const getItem = () => {
-    const itemProduct = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(listOfItems);
-      }, 2000);
-    });
-    itemProduct
-      .then((res) => {
-        idProduct = res.filter((item) => item.id === parseInt(id));
-        setProduct(idProduct[0]);
+    const db = getFirestore();
+    const itemCollection = db.collection("productos");
+
+    const oneItem = itemCollection.doc(id);
+    console.log("one item?", oneItem);
+
+    oneItem
+      .get()
+      .then((doc) => {
+        if (!doc.exists) {
+          console.log("Error, doc doesn't exists");
+          return;
+        }
+        setProduct({ id: doc.id, ...doc.data() });
         setLoading(false);
       })
       .catch((err) => {
@@ -27,11 +31,11 @@ export default function ItemDetailContainer() {
   };
   useEffect(() => {
     getItem();
-  });
+  }, []);
   return (
     <>
       {!loading ? (
-        <ItemDetail item={product} />
+        <ItemDetail item={{ product }} />
       ) : (
         <p className="loading">Loading...</p>
       )}

@@ -15,29 +15,31 @@ export default function ItemDetail({ item }) {
       "You have added " + productCount + " " + items + " to your cart!"
     );
     setFinishPurchase(false);
-    addToCart(item, productCount);
+    addToCart(item.product, productCount);
     setAddedProduct(true);
   }
   return (
     <>
       <p className="itemDetailCategory">
-        Home {">"} Categories {">"} {item.category}
+        Home {">"} Categories {">"} {item.product.category}
       </p>
       <div className="itemDetailContainer">
         <div>
           <img
             className="productDetailImg"
-            alt={item.description}
-            src={item.picture}
+            alt={item.product.description}
+            src={item.product.picture}
           ></img>
         </div>
         <div className="details">
-          <p className="itemDetailTitle">{item.title}</p>
-          <p className="detaildescription">{item.description}</p>
-          <p className="itemDetailStock">Stock: {item.stock} units</p>
-          <p className="itemDetailPrice">Price: ${item.price.toFixed(2)}</p>
+          <p className="itemDetailTitle">{item.product.title}</p>
+          <p className="detaildescription">{item.product.description}</p>
+          <p className="itemDetailStock">Stock: {item.product.stock} units</p>
+          <p className="itemDetailPrice">
+            Price: ${item.product.price.toFixed(2)}
+          </p>
           {finishPurchase ? (
-            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+            <ItemCount stock={item.product.stock} initial={1} onAdd={onAdd} />
           ) : (
             <FinishPurchase />
           )}

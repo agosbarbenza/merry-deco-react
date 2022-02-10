@@ -37,7 +37,7 @@ export function Cart() {
         </>
       ) : (
         <>
-          <FaShoppingCart style={{ "font-size": "2rem", margin: "auto" }} />
+          <FaShoppingCart style={{ fontSize: "2rem", margin: "auto" }} />
           <p className="noItems">Your cart is empty</p>
           <Link to={`/`} className="titleStyle">
             <button className="returnBtn">Return to Home</button>

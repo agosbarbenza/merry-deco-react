@@ -9,11 +9,11 @@ export function NavBar() {
   // const { categoryId } = useParams();
   const { cart } = useContext(cartContext);
   const categories = [
-    { id: 1, name: "Trees" },
-    { id: 2, name: "Lights" },
-    { id: 3, name: "Ornaments and Tree Accesories" },
-    { id: 4, name: "Kitchenwear and Tablewear" },
-    { id: 5, name: "Home Decor" },
+    { id: 1, category: "trees", name: "Trees" },
+    { id: 2, category: "lights", name: "Lights" },
+    { id: 3, category: "ornaments", name: "Ornaments and Accesories" },
+    { id: 4, category: "kitchenwear", name: "Kitchenwear and Tablewear" },
+    { id: 5, category: "homedecor", name: "Home Decor" },
   ];
   const cartCount = cart.map((item) => item.count).reduce((x, y) => x + y, 0);
   return (
@@ -31,7 +31,7 @@ export function NavBar() {
         {categories.map((item, key) => (
           <Link
             className="listItem titleStyleNav"
-            to={`/categories/${item.id}`}
+            to={`/category/${item.category}`}
             key={item.id}
           >
             {item.name}
