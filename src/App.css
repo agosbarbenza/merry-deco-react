@@ -461,3 +461,26 @@ body {
 .noItems {
   text-align: center;
 }
+
+/*Buy Form*/
+.orderGenerated {
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.congrats {
+  text-align: center;
+  font-size: 3rem;
+
+}
+
+.fillInfo {
+  text-align: center;
+}
+
+.partyIcon {
+  font-size: 3rem;
+  text-align: center;
+  margin: auto;
+}

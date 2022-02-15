@@ -26,9 +26,9 @@ export function Cart() {
               <span className="totalPrice">${totalPurchase.toFixed(2)}</span>
             </p>
           </div>
-          <button className="buyNowBtn" onClick={() => clearCart()}>
-            Buy Now
-          </button>
+          <Link to={`/buyform`} className="titleStyle">
+            <button className="buyNowBtn">Buy Now</button>
+          </Link>
           <div className="cartButtonsContainer">
             <button className="emptyCartBtn" onClick={() => clearCart()}>
               Empty cart
