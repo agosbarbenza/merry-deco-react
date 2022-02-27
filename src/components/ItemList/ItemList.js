@@ -1,27 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
-// import { listOfItems } from "../Item/listOfItems";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemList() {
-  // const { categoryId } = useParams();
+  const { categoryName } = useParams();
   const db = getFirestore();
   const itemCollection = db.collection("productos");
   const [arrayProducts, setArrayProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    itemCollection.get().then((collection) => {
-      if (collection.size === 0) {
-        console.log("Error, no collection to show.");
-        return;
+    if (categoryName) {
+      console.log("category name", categoryName);
+      if (categoryName == "all") {
+        itemCollection
+          .get()
+          .then(
+            (res) =>
+              setArrayProducts(
+                res.docs.map((item) => ({ ...item.data(), id: item.id }))
+              ),
+            setLoading(false)
+          )
+          .catch((err) => console.log("Error, no category to show ", err));
+      } else {
+        itemCollection
+          .where("category", "==", categoryName)
+          .get()
+          .then(
+            (res) =>
+              setArrayProducts(
+                res.docs.map((item) => ({ ...item.data(), id: item.id }))
+              ),
+            setLoading(false)
+          )
+          .catch((err) => console.log("Error, no category to show ", err));
       }
-      setArrayProducts(
-        collection.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-      );
-      setLoading(false);
-    });
-  }, []);
+    } else {
+      itemCollection
+        .where("category", "==", "featured")
+        .get()
+        .then(
+          (res) =>
+            setArrayProducts(
+              res.docs.map((item) => ({ ...item.data(), id: item.id }))
+            ),
+          setLoading(false)
+        )
+        .catch((err) => console.log("Error, no category to show ", err));
+    }
+  }, [categoryName]);
   return (
     <>
       <div className="itemListCont">

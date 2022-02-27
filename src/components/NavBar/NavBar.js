@@ -2,11 +2,9 @@ import React, { useContext } from "react";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { FaHollyBerry } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom";
 import { cartContext } from "../Context/CartProvider";
 
 export function NavBar() {
-  // const { categoryId } = useParams();
   const { cart } = useContext(cartContext);
   const categories = [
     { id: 1, category: "trees", name: "Trees" },

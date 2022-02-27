@@ -5,7 +5,6 @@ export default function Item({ item }) {
   return (
     <div className="itemContainer">
       <p className="categoryTitle">{item.category}</p>
-      <div className="lineSeparator"></div>
       <img
         className="productItemImg"
         alt={item.description}

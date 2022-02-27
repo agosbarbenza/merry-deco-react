@@ -13,7 +13,6 @@ export default function ItemDetailContainer() {
     const itemCollection = db.collection("productos");
 
     const oneItem = itemCollection.doc(id);
-    console.log("one item?", oneItem);
 
     oneItem
       .get()

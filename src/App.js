@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import { Cart } from "./components/Cart/Cart";
 import CartProvider from "./components/Context/CartProvider";
 import BuyForm from "./components/BuyForm/BuyForm";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
@@ -17,9 +18,13 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
+              <Main />
               <ItemListContainer />
             </Route>
-            <Route path="/category/:category">
+            <Route exact path="/all">
+              <ItemListContainer />
+            </Route>
+            <Route path="/category/:categoryName">
               <ItemListContainer />
             </Route>
             <Route path="/item/:id">
@@ -32,7 +37,7 @@ function App() {
               <BuyForm />
             </Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </CartProvider>
     </div>
