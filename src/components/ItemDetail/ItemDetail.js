@@ -19,7 +19,8 @@ export default function ItemDetail({ item }) {
     setAddedProduct(true);
   }
   return (
-    <>
+    <div className="itemDetailFirstContainer">
+      <div className="lineSeparatorNavBar"></div>
       <p className="itemDetailCategory">
         Home {">"} Categories {">"} {item.product.category}
       </p>
@@ -46,6 +47,6 @@ export default function ItemDetail({ item }) {
         </div>
         <ToastContainer />
       </div>
-    </>
+    </div>
   );
 }

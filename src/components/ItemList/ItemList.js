@@ -12,7 +12,7 @@ export default function ItemList() {
 
   useEffect(() => {
     if (categoryName) {
-      console.log("category name", categoryName);
+      setLoading(true);
       if (categoryName == "all") {
         itemCollection
           .get()
@@ -25,6 +25,7 @@ export default function ItemList() {
           )
           .catch((err) => console.log("Error, no category to show ", err));
       } else {
+        setLoading(true);
         itemCollection
           .where("category", "==", categoryName)
           .get()
@@ -38,6 +39,7 @@ export default function ItemList() {
           .catch((err) => console.log("Error, no category to show ", err));
       }
     } else {
+      setLoading(true);
       itemCollection
         .where("category", "==", "featured")
         .get()

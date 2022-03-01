@@ -12,11 +12,9 @@ export default function Item({ item }) {
       ></img>
       <p className="itemTitle">{item.title}</p>
       <p className="description">{item.description}</p>
-      <button className="detailsBtn">
-        <Link className="linkStyle" to={`/item/${item.id}`}>
-          See Details
-        </Link>
-      </button>
+      <Link className="linkStyle" to={`/item/${item.id}`}>
+        <button className="detailsBtn">See Details</button>
+      </Link>
     </div>
   );
 }

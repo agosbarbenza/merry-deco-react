@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 export default function Main() {
   const categories = [
     {
+      id: 1,
       name: "Lights",
       class: "imgLights",
       category: "lights",
     },
     {
+      id: 2,
       name: "Ornaments",
       class: "imgOrnaments",
       category: "ornaments",
     },
-    { name: "Trees", class: "imgTrees", category: "trees" },
-    { name: "Home Decor", class: "imgDecor", category: "homedecor" },
+    { id: 3, name: "Trees", class: "imgTrees", category: "trees" },
+    { id: 4, name: "Home Decor", class: "imgDecor", category: "homedecor" },
   ];
   return (
     <div className="mainContainer">

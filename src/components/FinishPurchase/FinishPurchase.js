@@ -6,10 +6,10 @@ export default function FinishPurchase() {
   return (
     <div className="finishContainer">
       <Link to={`/cart`} className="titleStyle">
-        <button className="addBtn">Finish your purchase</button>
+        <button className="finish">Finish your purchase</button>
       </Link>
       <Link to={`/`} className="titleStyle">
-        <button className="addBtn">Continue shopping</button>
+        <button className="finish">Continue shopping</button>
       </Link>
     </div>
   );

@@ -10,7 +10,9 @@ import {
 export default function Footer() {
   return (
     <div className="footerContainer">
-      <p>2022 Merry Deco - Terms and Conditions - Privacy Policy</p>
+      <p className="footerText">
+        2022 Merry Deco - Terms and Conditions - Privacy Policy
+      </p>
       <div className="socialMedia">
         <FaInstagram className="sm" />
         <FaFacebookSquare className="sm" />

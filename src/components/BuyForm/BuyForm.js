@@ -7,7 +7,7 @@ import { GiPartyPopper } from "react-icons/gi";
 
 export default function BuyForm() {
   const [orderId, setOrderId] = useState("");
-  const { cart } = useContext(cartContext);
+  const { cart, clearCart } = useContext(cartContext);
   const [form, setForm] = useState({
     name: "",
     lastName: "",
@@ -32,7 +32,7 @@ export default function BuyForm() {
     if (!form.name) errors.name = "Name required";
     if (!form.lastName) errors.lastName = "Last Name required";
     if (!/^\d{10}$/.test(form.phone)) {
-      errors.phone = "Phone number is not valid.";
+      errors.phone = "Phone number is not valid";
     }
     if (!form.email) {
       errors.email = "Email required";
@@ -40,10 +40,10 @@ export default function BuyForm() {
       errors.email = "Email is not valid";
     }
 
-    if (!form.repeatEmail) errors.repeatEmail = "Repeat email required.";
+    if (!form.repeatEmail) errors.repeatEmail = "Repeat email required";
 
     if (form.email !== form.repeatEmail) {
-      errors.repeatEmail = "Error. Email does not match.";
+      errors.repeatEmail = "Error. Email does not match";
     }
     return errors;
   }
@@ -71,7 +71,6 @@ export default function BuyForm() {
     ordersCollection
       .add(newOrder)
       .then(({ id }) => {
-        console.log("New order generated with id: " + id);
         setOrderId(id);
       })
       .catch((err) => {
@@ -81,12 +80,13 @@ export default function BuyForm() {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitted) {
       sendForm();
+      clearCart();
     }
   }, [errors]);
   return (
     <>
       {orderId ? (
-        <div>
+        <div className="buyCongrats">
           <p className="congrats">
             Congrats! <GiPartyPopper className="partyIcon" />
           </p>
@@ -110,49 +110,45 @@ export default function BuyForm() {
             value={form.name}
             onChange={handleInputChange}
           />
-          {errors.name && <p>{errors.name}</p>}
+          {errors.name && <p className="errors">{errors.name}</p>}
           <input
-            className="formInputs"
+            className="formInputs placeInputs"
             type="text"
             name="lastName"
             placeholder="Last Name"
             value={form.lastName}
             onChange={handleInputChange}
           />
-          {errors.lastName && <p>{errors.lastName}</p>}
+          {errors.lastName && <p className="errors">{errors.lastName}</p>}
           <input
-            className="formInputs"
+            className="formInputs placeInputs"
             type="text"
             name="phone"
             placeholder="Phone number"
             value={form.phone}
             onChange={handleInputChange}
           />
-          {errors.phone && <p>{errors.phone}</p>}
+          {errors.phone && <p className="errors">{errors.phone}</p>}
           <input
-            className="formInputs"
+            className="formInputs placeInputs"
             type="text"
             name="email"
             placeholder="E-mail"
             value={form.email}
             onChange={handleInputChange}
           />
-          {errors.email && <p>{errors.email}</p>}
+          {errors.email && <p className="errors">{errors.email}</p>}
           <input
-            className="formInputs"
+            className="formInputs placeInputs"
             type="text"
             name="repeatEmail"
             placeholder="Repeat E-mail"
             value={form.repeatEmail}
             onChange={handleInputChange}
           />
-          {errors.repeatEmail && <p>{errors.repeatEmail}</p>}
+          {errors.repeatEmail && <p className="errors">{errors.repeatEmail}</p>}
 
-          <button
-            type="submit"
-            className="sendFormBtn"
-            // onClick={() => sendForm()}
-          >
+          <button type="submit" className="sendFormBtn">
             Send
           </button>
         </form>
