@@ -1,24 +1,23 @@
-# Welcome to Merry Deco
+# Bienvenido a Merry Deco
 
-## About me
+## Sobre el proyecto
 
-Hi! My name is Agostina Barbenza, I'm 28 years old and I'm a fullstack developer based in Buenos Aires, Argentina. I'm also a Programming student from Universidad Tecnológica Nacional - Facultad Regional Avellaneda (UTN - FRA).
-I've been working as an Application Developer in Accenture Argentina since 2020 and after one year developing projects with React, I decided to take Coderhouse's React JS course in order to acquire more knowledge and deepen concepts in this powerful technology.
+El proyecto se basa en un front end de un sitio de ecommerce dedicado a la venta de artículos navideños.
+En el mismo se puede ver el listado de productos según categorias, destacados, o todos los productos, y también contarás con una vista detallada del producto que decidas seleccionar con todas sus especificaciones (por ejemplo, el stock disponible). Podrás agregar o quitar productos al carrito, ver el resumen del mismo y, una vez que confirmes la compra, se te redireccionará a un form donde completarás tus datos a fines de crear la orden de compra, la cual se almacenará en la base de datos.
 
-## About the project
+## Tecnologías
 
-This is the front-end of an ecommerce site dedicated to selling Christmas stuff. You can see the list of products by different categories, add or remove as many products as you like (based on a stock) from your cart and then finish the purchase by creating an order, which will be stored in Firebase.
+-ReactJS
+-Firebase --> almacena allí todas las ordenes de compra
+-react-toastify --> usado para mostrar un mensaje con el detalle de los productos agregados al carrito. Consideré usar este package porque me pareció que le daba una respuesta visual más dinámica al usuario, teniendo en cuenta que el sitio en sí es bastante estático.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Scripts
 
-## Available Scripts
-
-In the project directory, you can run:
+En el directorio del proyecto podrás correr los siguientes comandos:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Corre la app en el modo development.
+Abrir [http://localhost:3000](http://localhost:3000) para ver el proyecto en el browser
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La página recargará automaticamente cuando se produzcan y guarden cambios.
